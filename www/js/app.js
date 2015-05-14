@@ -13,12 +13,22 @@ angular.module('volunteerManagementApp', [
     'highcharts-ng',
     'adaptive.googlemaps',
     'ui.bootstrap.datetimepicker',
-    'checklist-model'
+    'checklist-model',
+    'ngCordova',
+    'ionic.service.core',
+    'ionic.service.push'
 ]).
 
-config(function($stateProvider, $urlRouterProvider, $compileProvider, RestangularProvider, $ionicConfigProvider) {
+config(function($stateProvider, $urlRouterProvider, $compileProvider, RestangularProvider, $ionicConfigProvider, $ionicAppProvider) {
     $ionicConfigProvider.views.transition('none');
     //$ionicConfigProvider.views.maxCache(0);
+    // Identify app
+  $ionicAppProvider.identify({
+        // The App ID (from apps.ionic.io) for the server
+        app_id: '3c03a2d7',
+        // The public API key all services will use for this app
+        api_key: '8057e7af1050f5049d00f71baefc9d42d9bfa01a48542ada'
+    });
     $urlRouterProvider.otherwise("/homePage");
     if(!ionic.Platform.isIOS())$ionicConfigProvider.scrolling.jsScrolling(false);
     $stateProvider.

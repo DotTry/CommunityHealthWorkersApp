@@ -2,6 +2,12 @@
     <ion-content>
         <ul class="list dark">
             <li>
+                <button class="button button-block button-dark" ng-click="identifyUser()">
+                    Identify a user
+                </button>
+                <button class="button button-block button-positive" ng-if="identified" ng-click="pushRegister()">
+                    Register for Push
+                </button>
                 <a ui-sref-active="active" class="item ion-home" menu-close nav-clear ui-sref="home.homePage">
                     Home
                 </a>
