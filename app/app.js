@@ -4,8 +4,3 @@ angular.module('MyApp', [])
         return string.split('').reverse().join('');
     }
 }])
-
-(function(){
-	angular.module('demoApp', [])
-		.value('version', '0.0.1');
-}())
