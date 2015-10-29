@@ -56,6 +56,69 @@
         });
     }]);
 
+    myApp.controller('postController', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('loginCtrl', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('registerCtrl', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('loginCtrl', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('groupController', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('taskController', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('messageCtrl', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    myApp.controller('hoursController', ['$scope', function ($scope) {
+        $scope.name = 'Superhero';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
     // Controller with dependencies on Angular's $http service and promises
     myApp.controller('CtrlHttp', function ($http, $scope, $q) {
         // Returns a promise which is resolved if http calls succeeds,
@@ -103,6 +166,7 @@ describe('myApp', function () {
         module('myApp');
     });
 
+
     describe('MyCtrl', function () {
         beforeEach(inject(function ($rootScope, $controller) {
             scope = $rootScope.$new();
@@ -121,6 +185,124 @@ describe('myApp', function () {
             expect(scope.counter).toBe(1);
         });
     });
+
+    describe('loginCtrl', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('MyCtrl', {
+                '$scope': scope
+            });
+        }));
+        it('checks if username is not undefined', function () {
+            expect(scope.name).toBe('Superhero');
+            expect(scope.name).not.toBe(null);
+        });
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
+    describe('postController', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('postController', {
+                '$scope': scope
+            });
+        }));
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
+    describe('groupController', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('groupController', {
+                '$scope': scope
+            });
+        }));
+
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
+    describe('taskController', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('taskController', {
+                '$scope': scope
+            });
+        }));
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
+    describe('messageCtrl', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('messageCtrl', {
+                '$scope': scope
+            });
+        }));
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
+    describe('hoursController', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('hoursController', {
+                '$scope': scope
+            });
+        }));
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
+    describe('registerCtrl', function () {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('registerCtrl', {
+                '$scope': scope
+            });
+        }));
+
+        it('watches the name and updates the counter', function () {
+            expect(scope.counter).toBe(0);
+            scope.name = 'Batman';
+            scope.$digest();
+            expect(scope.counter).toBe(1);
+        });
+    });
+
 
     describe('CtrlHttp', function () {
 
